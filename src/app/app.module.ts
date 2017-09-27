@@ -1,8 +1,11 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { SQLite } from '@ionic-native/sqlite';
+import { Router } from '@angular/router';
 import { MyApp } from './app.component';
 
+import { AppRoutingModule } from '../app/app.routes';
 import { AboutPage } from '../pages/about/about';
 import { Header } from '../pages/header/header';
 import { HomePage } from '../pages/home/home';
@@ -24,7 +27,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    //AppRoutingModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -38,6 +42,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    SQLite,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -14,9 +14,9 @@ export class AboutPage {
   }
 
   notas = [
-    new Notes(1, 'Senha do Cartão', 'Barara birirr Barara birirr asdnsuad dasdas asdasd', 'Gostei', 'Comentario'),
-    new Notes(2, 'Comandos de SNES', 'Barara birirr Barara birirr asdnsuad dasdas asdasd meia lua direita esquerda e tal', 'Gostei', 'Comentario'),
-    new Notes(3, 'Url de Comandos', 'zpto xypzasad asdasd dasdas asdasd meia lua direita esquerda e tal', 'Gostei', 'Comentario'),
-    new Notes(4, 'Codigo fonte', 'asddse fdfexczxcw wdawdasd asxs cC asdawd w axc aa wdw awC a sw asdasd meia lua direita esquerda e tal', 'Gostei', 'Comentario'),
+    new Notes(1, 'Senha do Cartão', 'Barara birirr Barara birirr asdnsuad dasdas asdasd', 5, 'Comentario'),
+    new Notes(2, 'Comandos de SNES', 'Barara birirr Barara birirr asdnsuad dasdas asdasd meia lua direita esquerda e tal', 4, 'Comentario'),
+    new Notes(3, 'Url de Comandos', 'zpto xypzasad asdasd dasdas asdasd meia lua direita esquerda e tal', 8, 'Comentario'),
+    new Notes(4, 'Codigo fonte', 'asddse fdfexczxcw wdawdasd asxs cC asdawd w axc aa wdw awC a sw asdasd meia lua direita esquerda e tal', 1, 'Comentario'),
   ]
 }

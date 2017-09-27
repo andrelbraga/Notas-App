@@ -12,7 +12,8 @@
             <code>
                 <ion-item>
                     <ion-label floating>Descrição</ion-label>
-                    <ion-input type="text" [value]="note.content" (input)="note.content = $event.target.value"></ion-input>
+                    <!-- <ion-input type="text" [value]="note.content" (input)="note.content = $event.target.value"></ion-input> -->
+                    <ion-textarea type="text" width="100%" rows="20" [value]="note.content" (input)="note.content = $event.target.value"></ion-textarea>
                 </ion-item>
             </code>
           </ion-card-content>
@@ -20,4 +21,5 @@
           </ion-row>
           </ion-card>
           <button ion-button round (click)="addNotes(note)">Add</button>
+          <button ion-button color="danger" (click)="backHome()">Voltar</button>
       </ion-content>
