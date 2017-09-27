@@ -178,10 +178,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var ModalPage = (function () {
-    function ModalPage(navCtrl, sqlite, sQLiteObject) {
+    function ModalPage(navCtrl, sqlite) {
         this.navCtrl = navCtrl;
         this.sqlite = sqlite;
-        this.sQLiteObject = sQLiteObject;
         this.note = {
             id: '',
             title: '',
@@ -204,7 +203,7 @@ ModalPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-modal',template:/*ion-inline-start:"C:\PROJETOS-STEFANINI\Notas-App\src\pages\modal\modal.html"*/'<ion-content padding>\n\n        <ion-card>\n\n          <ion-card-header>\n\n            <b> \n\n                <ion-item>\n\n                  <ion-label floating>Titulo</ion-label>\n\n                  <ion-input type="text" [value]="note.title" (input)="note.title = $event.target.value"></ion-input>\n\n                </ion-item>\n\n            </b>\n\n          </ion-card-header>\n\n          <ion-card-content>\n\n            <code>\n\n                <ion-item>\n\n                    <ion-label floating>Descrição</ion-label>\n\n                    <!-- <ion-input type="text" [value]="note.content" (input)="note.content = $event.target.value"></ion-input> -->\n\n                    <ion-textarea type="text" width="100%" rows="20" [value]="note.content" (input)="note.content = $event.target.value"></ion-textarea>\n\n                </ion-item>\n\n            </code>\n\n          </ion-card-content>\n\n          <ion-row>\n\n          </ion-row>\n\n          </ion-card>\n\n          <button ion-button round (click)="addNotes(note)">Add</button>\n\n          <button ion-button color="danger" (click)="backHome()">Voltar</button>\n\n      </ion-content>'/*ion-inline-end:"C:\PROJETOS-STEFANINI\Notas-App\src\pages\modal\modal.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_sqlite__["a" /* SQLite */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_sqlite__["b" /* SQLiteObject */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_sqlite__["a" /* SQLite */]])
 ], ModalPage);
 
 //# sourceMappingURL=modal.js.map
@@ -328,28 +327,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var MyApp = (function () {
-    function MyApp(platform, statusBar, splashScreen) {
+    function MyApp(platform, statusBar, splashScreen, sqlite) {
+        this.sqlite = sqlite;
         this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__["a" /* TabsPage */];
         platform.ready().then(function () {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
             statusBar.styleDefault();
             splashScreen.hide();
-            if (platform.is('cordova')) {
-                console.log(platform);
-                var localS = window.localStorage;
-                localS.setItem('noteDb', 'DB');
-            }
-            var db = new __WEBPACK_IMPORTED_MODULE_4__ionic_native_sqlite__["a" /* SQLite */];
-            db.create({
-                name: 'data.db',
-                location: 'default'
-            }).then(function (db) {
-                db.executeSql('create table danceMoves(name VARCHAR(32))', {})
-                    .then(function () { return console.log('Executed SQL'); })
-                    .catch(function (e) { return console.log(e); });
-            })
-                .catch(function (e) { return console.log(e); });
+            // sqlite.create({
+            //   name: 'data.db',
+            //   location: 'default'
+            // }).then((db: SQLiteObject) => {
+            //     db.executeSql('create table danceMoves(name VARCHAR(32))', {})
+            //       .then(() => console.log('Executed SQL'))
+            //       .catch(e => console.log(e));
+            //   }).catch(e => console.log(e));
         });
     }
     return MyApp;
@@ -359,7 +352,7 @@ MyApp = __decorate([
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
-        __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_sqlite__["a" /* SQLite */]])
 ], MyApp);
 
 //# sourceMappingURL=app.component.js.map

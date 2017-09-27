@@ -11,14 +11,14 @@ import { HomePage } from '../home/home';
 })
 export class ModalPage {
   
-  constructor(public navCtrl: NavController, private sqlite: SQLite, private sQLiteObject: SQLiteObject) {
+  constructor(public navCtrl: NavController, private sqlite: SQLite) {
     this.opendb();
    }  
 
   
    opendb(){
    console.log('open db!!');
-    }
+   }
 
   note = {
     id:'',
