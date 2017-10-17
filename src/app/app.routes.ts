@@ -6,7 +6,7 @@ import { AboutPage } from '../pages/about/about';
 import { Header } from '../pages/header/header';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { ModalPage } from '../pages/modal/modal';
+import { AddData } from '../pages/add-data/add-data';
 
 
 const routes: Routes = [
@@ -14,7 +14,7 @@ const routes: Routes = [
     {path:'header', component: Header},
     {path:'about', component: AboutPage},
     {path:'home', component: HomePage},
-    {path:'modal', component: ModalPage},
+    {path:'modal', component: AddData},
     {path:'tabs', component: TabsPage}
 ];
 

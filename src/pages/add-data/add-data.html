@@ -1,0 +1,26 @@
+<ion-header>
+      <ion-navbar>
+        <ion-title>Voltar Home</ion-title>
+      </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+        <ion-card>
+          <ion-card-header>
+                <ion-item>
+                  <ion-label floating><b>Titulo</b></ion-label>
+                  <ion-input type="text" [(ngModel)]="note.title"></ion-input>
+                </ion-item>
+          </ion-card-header>
+          <ion-card-content>
+                <ion-item>
+                    <ion-label floating>Descrição</ion-label>
+                    <ion-textarea type="text" width="100%" rows="20" [(ngModel)]="note.content"></ion-textarea>
+                </ion-item>
+          </ion-card-content>
+          <ion-row>
+          </ion-row>
+          </ion-card>
+          <button ion-button round (click)="addNotes()">Add</button>
+          <button ion-button color="danger" (click)="backHome()">Voltar</button>
+      </ion-content>
